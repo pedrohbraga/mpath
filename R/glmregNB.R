@@ -1,5 +1,5 @@
 ### Adapted from file MASS/R/negbin.R
-glmregNB.snow <- function(formula, data, weights, offset = NULL, nlambda = 100, lambda = NULL, lambda.min.ratio = ifelse(nobs < nvars, .05, .001), alpha = 1, gamma = 3, rescale = TRUE, standardize = TRUE, penalty.factor = rep(1, nvars), thresh = 1e-3, maxit.theta = 10, maxit = 1000, eps = .Machine$double.eps, trace = FALSE, start = NULL, etastart = NULL, mustart = NULL, theta.fixed = FALSE, theta0 = NULL, init.theta = NULL, link = log, penalty = c("enet", "mnet", "snet"), method = "glmreg_fit", model = TRUE, x.keep = FALSE, y.keep = TRUE, contrasts = NULL, convex = FALSE, parallel = TRUE, n.cores = 2, ...) {
+glmregNB <- function(formula, data, weights, offset = NULL, nlambda = 100, lambda = NULL, lambda.min.ratio = ifelse(nobs < nvars, .05, .001), alpha = 1, gamma = 3, rescale = TRUE, standardize = TRUE, penalty.factor = rep(1, nvars), thresh = 1e-3, maxit.theta = 10, maxit = 1000, eps = .Machine$double.eps, trace = FALSE, start = NULL, etastart = NULL, mustart = NULL, theta.fixed = FALSE, theta0 = NULL, init.theta = NULL, link = log, penalty = c("enet", "mnet", "snet"), method = "glmreg_fit", model = TRUE, x.keep = FALSE, y.keep = TRUE, contrasts = NULL, convex = FALSE, parallel = TRUE, n.cores = 2, ...) {
   if (!theta.fixed) init.theta <- theta0[1]
   if (theta.fixed) {
     if (length(theta0) != nlambda) {
