@@ -29,10 +29,16 @@ lambda=NULL, nfolds=10, foldid, plot.it=TRUE, se=TRUE, n.cores=2, trace=FALSE, p
     all.folds <- cv.folds(n, K)
     else all.folds <- foldid
     if(parallel){
-    cl <- eval(parse(text="parallel:::makeCluster(n.cores)"))
-    registerDoParallel(cl)
+      
+      nw <- n.cores  # number of workers
+      cl <- makeSOCKcluster(nw)
+      registerDoSNOW(cl)
+
     i <- 1  ###needed to pass R CMD check with parallel code below
-    residmat <- foreach(i=seq(K), .combine=cbind) %dopar% {
+    residmat <- foreach(i = seq(K), 
+                        .combine = cbind,
+                        .packages = c("mpath", "stats", "MASS")
+                        ) %dopar% {
       omit <- all.folds[[i]]
 ### changed 5/20/2013 fixed theta
       if(!is.null(offset)){
@@ -44,7 +50,7 @@ lambda=NULL, nfolds=10, foldid, plot.it=TRUE, se=TRUE, n.cores=2, trace=FALSE, p
       fitcv$terms <- NULL ### logLik requires data frame if terms is not NULL
       logLik(fitcv, newx=X[omit,-1, drop=FALSE], Y[omit], weights=weights[omit], offset=newoffset)
    }
-   eval(parse(text="parallel:::stopCluster(cl)"))
+   eval(parse(text="stopCluster(cl)"))
     }
     else{
           residmat <- matrix(NA, nlambda, K)
