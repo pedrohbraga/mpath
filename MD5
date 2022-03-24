@@ -5,8 +5,8 @@ aa3fe33bc8379d0779e325a71ba215b5 *NAMESPACE
 fb00e82bafc9a84ca4788e4bbd8ae9a9 *R/compute_g.R
 a9ffdf3120f6461db6ed0b8a2c80b653 *R/compute_wt.R
 220541460aa6c105efbab64bc9935663 *R/convexMin.R
-65b68bf5aaf201437a3f0ec6ac7a2ae5 *R/cv.glmreg.R
-8f5f262aeb8f48025af3ab4b2cb3714d *R/cv.glmregNegbin.R
+bdfb033ccb1a5847ae0ce50f0e1e8707 *R/cv.glmreg.R
+ba5921adf03d8a3f2614cfde05c237b5 *R/cv.glmregNegbin.R
 8bde2aa5e68da419dfd57b94065f6c91 *R/cv.irglmreg.R
 b03d0c9f634beacb2cbdafb45abb6c8d *R/cv.irsvm.R
 f65bf3b9e24d14156da9d0662765718d *R/cv.nclreg.R
@@ -14,7 +14,7 @@ e834f216a0587dcd2fb35602f36bf3b6 *R/cv.zipath.R
 b708fed09f53b06bdc606f7cca20e971 *R/error.bars.R
 19a95922f308f641a5918c1aab7c2413 *R/gfunc.R
 cc765d71d46750f528cd9bf0c86f8d8c *R/glmreg.R
-f564fc745d356d21bfc191257ba390e3 *R/glmregNB.R
+c25bda338c5036ba3c46264d6a4001e2 *R/glmregNB.R
 952894fad08ab0a7d56117c70573a172 *R/irglm.R
 b50bf5e9d9c1323bf0f47839406b65c9 *R/irglmreg.R
 60226f1eaff342a1a3c37a695b20dcb3 *R/irsvm.R
